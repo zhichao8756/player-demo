@@ -56,9 +56,13 @@ import { DynamicIslandPlayer } from 'js-dynamic-island-player'
   width: 395px;
   height: 344px;
   overflow: hidden;
-  background-image: url(https://www.apple.com.cn/v/iphone-14-pro/a/images/overview/dynamic-island/dynamic_hw__btl4fomgspyu_large.png);
-  background-size: 100% 100%;
+  background-image: url(https://www.apple.com.cn/v/iphone-14-pro/a/images/overview/dynamic-island/dynamic_hw__btl4fomgspyu_large.png), url("./assets/bg.png");
+  background-size: 100% 100%, 90% 100%;
+  border-top-left-radius: 74px;
+  border-top-right-radius: 74px;
   display: flex;
   justify-content: center;
+  background-position-x: 0,17px;
+  background-repeat: no-repeat;
 }
 </style>
