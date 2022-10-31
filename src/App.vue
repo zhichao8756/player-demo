@@ -9,6 +9,7 @@ import song2 from '@/assets/audio/80s_vibe.mp3'
 import cover1 from '@/assets/cover1.png'
 import cover2 from '@/assets/cover2.png'
 const player = ref()
+const theme = ref()
 const playList = ref([
   {
     title: 'Rave Digger',
@@ -64,7 +65,9 @@ function playPrevious () {
 function getState () {
   console.log(player.value.getSoundState())
 }
-
+function setTheme (color) {
+  theme.value = color
+}
 </script>
 
 <template>
@@ -76,6 +79,7 @@ function getState () {
             :play-list="playList"
             :volume="0.8"
             :html5="true"
+            :theme="theme"
             @play="play"
             @next="next"
             @pause="pause"
@@ -93,6 +97,16 @@ function getState () {
       <button @click="toggle">play / pause</button>
       <button @click="playNext">next song</button>
       <button @click="playPrevious">previous song</button>
+      <div style="display: flex;margin-top: 20px; align-items: center">
+        <p>set theme:</p>
+        <div class="theme-control">
+          <button @click="setTheme('#272729')" style="background: #272729"></button>
+          <button @click="setTheme('#e4393c')" style="background: #e4393c"></button>
+          <button @click="setTheme('#747bff')" style="background: #747bff"></button>
+        </div>
+
+        <button @click="setTheme('https://m1.im5i.com/2022/10/31/UVQPwD.jpg')" style="">set picture</button>
+      </div>
     </div>
 
   </div>
@@ -152,5 +166,10 @@ function getState () {
 }
 .control-area button {
   margin: 3px 16px;
+}
+.theme-control button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 </style>
