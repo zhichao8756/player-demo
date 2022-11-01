@@ -68,6 +68,9 @@ function getState () {
 function setTheme (color) {
   theme.value = color
 }
+function setRate (val) {
+  player.value.setRate(val)
+}
 </script>
 
 <template>
@@ -97,6 +100,8 @@ function setTheme (color) {
       <button @click="toggle">play / pause</button>
       <button @click="playNext">next song</button>
       <button @click="playPrevious">previous song</button>
+      <button @click="setRate(2.0)">set rate 2x</button>
+      <button @click="setRate(1.0)">set rate 1x</button>
       <div style="display: flex;margin-top: 20px; align-items: center">
         <p>set theme:</p>
         <div class="theme-control">
